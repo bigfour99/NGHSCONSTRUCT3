@@ -4488,8 +4488,7 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.System.Acts.CreateObject,
 		C3.Plugins.System.Exps.random,
 		C3.Plugins.Sprite.Exps.Count,
-		C3.Plugins.Sprite.Acts.SetAnimFrame,
-		C3.Plugins.System.Cnds.EveryTick
+		C3.Plugins.Sprite.Acts.SetAnimFrame
 	];
 };
 self.C3_JsPropNameTable = [
@@ -4511,7 +4510,8 @@ self.C3_JsPropNameTable = [
 	{Keyboard: 0},
 	{score: 0},
 	{TiledBackground: 0},
-	{Text: 0}
+	{Text: 0},
+	{Text2: 0}
 ];
 
 self.InstanceType = {
@@ -4528,7 +4528,8 @@ self.InstanceType = {
 	Keyboard: class extends self.IInstance {},
 	score: class extends self.ITextInstance {},
 	TiledBackground: class extends self.ITiledBackgroundInstance {},
-	Text: class extends self.ITextInstance {}
+	Text: class extends self.ITextInstance {},
+	Text2: class extends self.ITextInstance {}
 }
 }
 
@@ -4668,11 +4669,7 @@ self.C3_ExpressionFuncs = [
 		},
 		() => "Coins Events",
 		() => 2,
-		() => "Bullet Events",
-		p => {
-			const v0 = p._GetNode(0).GetVar();
-			return () => and("score:", v0.GetValue());
-		}
+		() => "Bullet Events"
 ];
 
 
