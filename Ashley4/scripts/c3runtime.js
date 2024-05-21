@@ -4452,12 +4452,12 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Text.Acts.SetText,
 		C3.Plugins.System.Exps.int,
 		C3.Plugins.Text.Exps.Text,
-		C3.Plugins.Sprite.Exps.Height,
 		C3.Plugins.System.Acts.NextPrevLayout,
 		C3.Behaviors.Physics.Acts.EnableCollisions,
 		C3.Plugins.Sprite.Exps.Width,
 		C3.Plugins.System.Cnds.Every,
-		C3.Plugins.Sprite.Acts.SetSize
+		C3.Plugins.Sprite.Acts.SetSize,
+		C3.Plugins.Sprite.Exps.Height
 	];
 };
 self.C3_JsPropNameTable = [
@@ -4624,9 +4624,7 @@ self.C3_ExpressionFuncs = [
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
 			const n1 = p._GetNode(1);
-			const f2 = p._GetNode(2).GetBoundMethod();
-			const n3 = p._GetNode(3);
-			return () => (f0(n1.ExpObject()) + f2(n3.ExpObject()));
+			return () => (f0(n1.ExpObject()) + 1);
 		},
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
